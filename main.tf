@@ -5,10 +5,12 @@ terraform {
       name = "modulo-stdp-001"
     }
   }
-}
-
-provider "azurerm" {
-  features {}
+  required_providers {
+    azurerm = {
+      version = "3.116.0"
+      source  = "hashicorp/azurerm"
+    }
+  }
 }
 
 module "resource-group" {

@@ -13,6 +13,9 @@ terraform {
   }
 }
 
+provider "azurerm" {
+}
+
 module "resource-group" {
   source  = "app.terraform.io/Fernandinho/resource-group/azure"
   version = "1.2.0"

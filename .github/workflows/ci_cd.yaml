@@ -47,8 +47,8 @@ jobs:
           }
           EOF
       - name: Terraform Login
-        run: terraform login ${{secrets.TF_TOKEN_app_terraform_io}}
-        
+        run: terraform login ${{env.TF_TOKEN_app_terraform_io}}
+
       - name: Terraform Init
         run: terraform init
 

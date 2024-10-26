@@ -30,18 +30,13 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: Get Sub ID by Name
-        run: |
-          SUB_ID=$(az account list --query "[?name=='${{ env.subscription-name }}'].id" -o tsv)
-          echo "##[set-output name=subscription-id;]$SUB_ID" >> $GITHUB_ENV
-        
-
       - name: Generate subscription provider
         run: |
+          SUB_ID=$(az account list --query "[?name=='${{ env.subscription-name }}'].id" -o tsv)
           cat <<EOF > subscription.tf
           provider "azurerm" {
             features {}
-            subscription_id = "${{ env.subscription-id }}"
+            subscription_id = "$SUB_ID"
           }
           EOF
 

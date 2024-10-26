@@ -5,6 +5,7 @@ terraform {
       source  = "hashicorp/azurerm"
     }
   }
+  cloud {}
 }
 
 module "resource-group" {

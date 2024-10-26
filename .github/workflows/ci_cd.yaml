@@ -34,12 +34,6 @@ jobs:
         with:
           creds: '{"clientId": "fc86d2f0-2238-4977-8e7e-973a06cc404a","clientSecret": "qas8Q~tQPHCGtJKTNjG3ZP~kV4QPQWVZrM9-Xbsa","subscriptionId": "${{env.subscription-name}}","tenantId": "f8d886ff-2097-4c25-96a8-6dc1a287954d"}'
 
-      - name: Create credentials.tfrc.json
-        run: |
-            echo "credentials \"app.terraform.io\" {" > ~/.terraformrc
-            echo "  token = \"${{env.TF_TOKEN_app_terraform_io}}\"" >> ~/.terraformrc
-            echo "}" >> ~/.terraformrc
-
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 

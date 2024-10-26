@@ -36,7 +36,8 @@ jobs:
 
       - name: Create credentials.tfrc.json
         run: |
-          cat <<EOF > credentials.tfrc.json
+          mkdir ./terraform.d
+          cat <<EOF > ./terraform.d/credentials.tfrc.json
           {
             "credentials": {
               "app.terraform.io": {

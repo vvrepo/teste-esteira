@@ -36,16 +36,9 @@ jobs:
 
       - name: Create credentials.tfrc.json
         run: |
-          mkdir ./terraform.d
-          cat <<EOF > ./terraform.d/credentials.tfrc.json
-          {
-            "credentials": {
-              "app.terraform.io": {
-                "token": "${{ env.TF_TOKEN_app_terraform_io }}"
-              }
-            }
-          }
-          EOF
+            echo "credentials \"app.terraform.io\" {" > ~/.terraformrc
+            echo "  token = \"${{env.TF_TOKEN_app_terraform_io}}\"" >> ~/.terraformrc
+            echo "}" >> ~/.terraformrc
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3

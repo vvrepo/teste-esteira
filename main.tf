@@ -2,7 +2,7 @@ terraform {
   cloud {
     organization = "Fernandinho"
     workspaces {
-      name = "modulo-stdp-001"
+      name = "teste-esteira-dev"
     }
   }
   required_providers {
@@ -11,9 +11,6 @@ terraform {
       source  = "hashicorp/azurerm"
     }
   }
-}
-
-provider "azurerm" {
 }
 
 module "resource-group" {

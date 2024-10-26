@@ -27,6 +27,11 @@ jobs:
           git config --global url."https://github.com/".insteadOf "git@github.com:"
           git config --global url."https://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@github.com/".insteadOf "https://github.com/"
       
+      - name: Az CLI login
+        uses: azure/login@v2
+        with:
+          creds: '{"clientId": "fc86d2f0-2238-4977-8e7e-973a06cc404a","clientSecret": "qas8Q~tQPHCGtJKTNjG3ZP~kV4QPQWVZrM9-Xbsa","subscriptionId": "f8d886ff-2097-4c25-96a8-6dc1a287954d","tenantId": "f8d886ff-2097-4c25-96a8-6dc1a287954d"}'
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 

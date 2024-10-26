@@ -1,10 +1,4 @@
 terraform {
-  cloud {
-    organization = "Fernandinho"
-    workspaces {
-      name = "teste-esteira-dev"
-    }
-  }
   required_providers {
     azurerm = {
       version = "3.116.0"

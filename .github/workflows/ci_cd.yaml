@@ -52,8 +52,6 @@ jobs:
             subscription_id = "$SUB_ID"
           }
           EOF
-      - name: Terraform Login
-        run: terraform login
 
       - name: Terraform Init
         run: terraform init

@@ -8,6 +8,7 @@ on:
 
 env:
   subscription-name: Desenvolvimento
+  TF_TOKEN_app_terraform_io: 9bKD6MWGovtLcw.atlasv1.uZwqmceB7t0yIZM6eM6WUpzNlGBWlSpNeNXp3CyCrto6W9c0UTXp27zLWxtOdBEOviU
 
 jobs:
   build:
@@ -32,10 +33,6 @@ jobs:
       - name: Generate subscription file
         run: |
           echo "TF_VAR_ARM_SUBSCRIPTION_ID = \"${{ env.subscription-name }}\"" > subscription.auto.tfvars
-
-      - name: Setup HCP Terraform
-        run: |
-          echo "9bKD6MWGovtLcw.atlasv1.uZwqmceB7t0yIZM6eM6WUpzNlGBWlSpNeNXp3CyCrto6W9c0UTXp27zLWxtOdBEOviU" > .terraformrc
 
       - name: Terraform Init
         run: terraform init

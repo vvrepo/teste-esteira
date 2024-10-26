@@ -32,7 +32,7 @@ jobs:
 
       - name: Generate subscription provider
         run: |
-          cat <<EOF > terraform/subscription.tf
+          cat <<EOF > subscription.tf
           provider "azurerm" {
             features {}
             subscription_id = "${{ env.subscription-name }}"

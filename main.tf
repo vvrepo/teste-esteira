@@ -1,13 +1,3 @@
-terraform {
-  required_providers {
-    azurerm = {
-      version = "3.116.0"
-      source  = "hashicorp/azurerm"
-    }
-  }
-  cloud {}
-}
-
 variable "name" {}
 variable "location" {}
 

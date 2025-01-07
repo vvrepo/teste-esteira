@@ -7,3 +7,6 @@ module "resource-group" {
   name = var.name
   location = var.location
 }
+
+
+
